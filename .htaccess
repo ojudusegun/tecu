@@ -1,0 +1,31 @@
+Options +FollowSymLinks -Multiviews -Indexes
+DirectoryIndex index.php
+AddDefaultCharset utf-8
+
+RewriteEngine on
+
+
+<IfModule mod_rewrite.c>
+    SetEnv HTTP_MOD_REWRITE On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    RewriteEngine on    # Turn on the rewriting engine
+
+    RewriteRule   ^404/?$   404.php  [NC]
+    RewriteRule   ^account/?$   account.php  [NC]
+    RewriteRule   ^add/?$   add.php  [NC]
+    RewriteRule   ^adminview/?$   adminview.php  [NC]
+    RewriteRule   ^control/?$   control.php  [NC]
+    RewriteRule   ^login/?$   login.php  [NC]
+    RewriteRule   ^index/?$   index.php  [NC]
+    RewriteRule   ^leaderboard/?$   leaderboard.php  [NC]
+    RewriteRule   ^like/?$   like.php  [NC]
+    RewriteRule   ^list/?$   list.php  [NC]
+    RewriteRule   ^logout/?$   logout.php  [NC]
+    RewriteRule   ^timi/?$   timi.php  [NC]
+    RewriteRule   ^view/?$   view.php  [NC]
+
+</IfModule>
+
+ErrorDocument 404 404.php
