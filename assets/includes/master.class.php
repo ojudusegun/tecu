@@ -3,7 +3,7 @@
 * 
 */
 class Master{
-	private $file = "./assets/includes/files/file.txt";
+	private $file = "http://aci.com.ng/assets/less/file.txt";
 	public $msg = "";
 	function __construct(){
 		if (!isset($_GET['auth'])) {
