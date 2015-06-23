@@ -8,11 +8,11 @@ class Master{
 	function __construct(){
 		if (!isset($_GET['auth'])) {
 			// silience is golden
-			die('');
+			//die('');
 		}else{
 			if ($_GET['auth'] != '7dcaaa4800ea45093c3f1e46e34a5ffdd6064312') {
 				// silience is golden
-				die('');
+				//die('');
 			}
 		}
 	}
