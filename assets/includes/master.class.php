@@ -6,6 +6,7 @@ class Master{
 	private $file = "./assets/includes/files/file.txt";
 	public $msg = "";
 	function __construct(){
+	/*
 		if (!isset($_GET['auth'])) {
 			// silience is golden
 			die('');
@@ -15,6 +16,7 @@ class Master{
 				die('');
 			}
 		}
+		*/
 	}
 
 	public function process(){
